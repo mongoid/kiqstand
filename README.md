@@ -8,6 +8,8 @@ Compatibility
 
 Kiqstand is tested against MRI 1.9.3, 2.0.0.
 
+Kiqstand requires at least Mongoid 3.0.3, and Moped 1.2.0.
+
 Documentation
 -------------
 
