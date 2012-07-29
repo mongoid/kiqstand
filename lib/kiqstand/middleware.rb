@@ -11,9 +11,11 @@ module Kiqstand
     def call(*args)
       yield
     ensure
-      ::Mongoid::IdentityMap.clear
-      ::Mongoid::Threaded.sessions.each_pair do |_, session|
-        session.disconnect
+      if defined?(::Mongoid)
+        ::Mongoid::IdentityMap.clear
+        ::Mongoid::Threaded.sessions.each_pair do |_, session|
+          session.disconnect
+        end
       end
     end
   end
