@@ -1,7 +1,7 @@
 Kiqstand [![Build Status](https://secure.travis-ci.org/mongoid/kiqstand.png?branch=master&.png)](http://travis-ci.org/mongoid/kiqstand)
 ========
 
-Kiqstand is a middleware for Sidekiq for use with Mongoid and Moped.
+Kiqstand is a middleware for Sidekiq for use with Mongoid 3.
 
 Compatibility
 -------------
@@ -10,6 +10,28 @@ Kiqstand is tested against MRI 1.9.3, 2.0.0.
 
 Documentation
 -------------
+
+Include Kiqstand in your `Gemfile`.
+
+```ruby
+gem "kiqstand"
+```
+
+If you're not using Rails, ensure you require it.
+
+```ruby
+require "kiqstand"
+```
+
+Add the middleware to the Sidekiq server middleware.
+
+```ruby
+Sidekiq.configure_server do |config|
+  config.server_middleware do |chain|
+    chain.add Kiqstand::Middleware
+  end
+end
+```
 
 License
 -------
