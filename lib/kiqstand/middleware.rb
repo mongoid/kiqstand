@@ -13,9 +13,15 @@ module Kiqstand
     ensure
       if defined?(::Mongoid)
         ::Mongoid::IdentityMap.clear
-        ::Mongoid::Threaded.sessions.each_pair do |_, session|
-          session.disconnect
-        end
+        disconnect_sessions
+      end
+    end
+
+    private
+
+    def disconnect_sessions
+      ::Mongoid::Threaded.sessions.each_pair do |_, session|
+        session.disconnect
       end
     end
   end
