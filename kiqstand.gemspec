@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Durran Jordan"]
   s.email       = ["durran@gmail.com"]
   s.homepage    = "http://mongoid.org"
-  s.summary     = "Mongoid/Moped Middleware for Sidekiq"
+  s.summary     = "Mongoid 3 Middleware for Sidekiq"
   s.description = s.summary
 
   s.required_rubygems_version = ">= 1.3.6"
