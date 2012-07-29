@@ -5,22 +5,22 @@ require "rake"
 require "rspec/core/rake_task"
 
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-require "mongoid/version"
+require "kiqstand/version"
 
 task :gem => :build
 task :build do
-  system "gem build mongoid.gemspec"
+  system "gem build kiqstand.gemspec"
 end
 
 task :install => :build do
-  system "sudo gem install mongoid-#{Mongoid::VERSION}.gem"
+  system "sudo gem install kiqstand-#{Kiqstand::VERSION}.gem"
 end
 
 task :release => :build do
-  system "git tag -a v#{Mongoid::VERSION} -m 'Tagging #{Mongoid::VERSION}'"
+  system "git tag -a v#{Kiqstand::VERSION} -m 'Tagging #{Kiqstand::VERSION}'"
   system "git push --tags"
-  system "gem push mongoid-#{Mongoid::VERSION}.gem"
-  system "rm mongoid-#{Mongoid::VERSION}.gem"
+  system "gem push kiqstand-#{Kiqstand::VERSION}.gem"
+  system "rm kiqstand-#{Kiqstand::VERSION}.gem"
 end
 
 RSpec::Core::RakeTask.new("spec") do |spec|
