@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = "kiqstand"
 
   s.add_dependency("mongoid", ["~> 4.0"])
-  s.add_dependency("moped", ["~> 1.4"])
 
   s.files = Dir.glob("lib/**/*") + %w(CHANGELOG.md LICENSE README.md Rakefile)
   s.require_path = 'lib'
