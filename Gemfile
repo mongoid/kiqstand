@@ -1,7 +1,6 @@
 source "http://rubygems.org"
 gemspec
 
-gem "mongoid", github: "mongoid/mongoid"
 gem "rake"
 
 platforms :mri_19 do

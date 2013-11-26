@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "kiqstand"
 
-  s.add_dependency("mongoid", ["~> 4.0"])
+  s.add_dependency("mongoid", ["~> 3.1"])
 
   s.files = Dir.glob("lib/**/*") + %w(CHANGELOG.md LICENSE README.md Rakefile)
   s.require_path = 'lib'
