@@ -6,6 +6,8 @@ Kiqstand is a middleware for Sidekiq for use with Mongoid 3.
 Compatibility
 -------------
 
+**If you are running Mongoid 4 (or the master), you do not need Kiqstand.**
+
 Kiqstand is tested against MRI 1.9.3, 2.0.0.
 
 - Use Kiqstand 1.0.x with Mongoid 3.0.x
