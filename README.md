@@ -1,7 +1,13 @@
 Kiqstand [![Build Status](https://secure.travis-ci.org/mongoid/kiqstand.png?branch=master&.png)](http://travis-ci.org/mongoid/kiqstand)
 ========
 
-Kiqstand is a middleware for Sidekiq for use with Mongoid 3.
+Kiqstand is a middleware for Sidekiq for use with Mongoid 3. It will clear the Mongoid::IdentityMap after each job is
+processed.
+
+Note that because Mongoid sessions are stored on Fiber-local variables, they will automatically disconnect after each
+job. If you want to re-use connections, see
+[this Mongoid user group discussion](https://groups.google.com/forum/#!topic/mongoid/8rpSlgsRSSc) to patch
+`Celluloid::Thread`.
 
 Compatibility
 -------------

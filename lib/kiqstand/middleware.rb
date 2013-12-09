@@ -1,13 +1,11 @@
 # encoding: utf-8
 module Kiqstand
 
-  # This is the middleware for ensuring Moped sessions are diconnected after
-  # a worker runs, and that the identity map is cleared.
+  # This is the middleware for ensuring the Mongoid identity map is cleared.
   class Middleware
 
     # Ensures that after each worker runs, the identity map is cleared in case
-    # it was accidentally enabled in this environment, and each session
-    # disconnects it's nodes.
+    # it was accidentally enabled in this environment.
     #
     # @example Execute the worker.
     #   worker.call
@@ -20,7 +18,6 @@ module Kiqstand
     ensure
       if defined?(::Mongoid)
         ::Mongoid::IdentityMap.clear
-        ::Mongoid.disconnect_sessions
       end
     end
   end

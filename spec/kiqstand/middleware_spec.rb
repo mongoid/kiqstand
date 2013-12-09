@@ -24,24 +24,5 @@ describe Kiqstand::Middleware do
       end
     end
 
-    context "when a session is alive" do
-
-      before do
-        Model.create
-        middleware.call {}
-      end
-
-      let(:sessions) do
-        Mongoid::Threaded.sessions.values
-      end
-
-      it "disconnects the session" do
-        sessions.each do |session|
-          session.cluster.nodes.each do |node|
-            node.send(:connected?).should be_false
-          end
-        end
-      end
-    end
   end
 end
