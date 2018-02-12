@@ -1,4 +1,4 @@
-Kiqstand [![Build Status](https://secure.travis-ci.org/mongoid/kiqstand.png?branch=master&.png)](http://travis-ci.org/mongoid/kiqstand)
+Kiqstand [![Build Status](https://secure.travis-ci.org/mongoid/kiqstand.svg?branch=master)](http://travis-ci.org/mongoid/kiqstand)
 ========
 
 Kiqstand is a middleware for Sidekiq for use with Mongoid 3.
